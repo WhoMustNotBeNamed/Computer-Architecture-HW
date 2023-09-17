@@ -2,9 +2,9 @@
 
 ### Код программы:
 
-``` assembly
+``` Assembly
 .data
-	    arg01:  .asciz "Введите 1ое число: "
+	arg01:  .asciz "Введите 1ое число: "
     	arg02:  .asciz "Введите 2ое число: "
     	result1: .asciz "Частное = "
     	result2: .asciz "Остаток = "
