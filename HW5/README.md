@@ -118,6 +118,11 @@ error_n:
         jal     find_sum
 .end_macro
 
+# Вызов подпрограммы, которая выводит результат
+.macro output
+        jal       output
+.end_macro
+
 # Завершение программы
 .macro exit
         li      a7, 10
