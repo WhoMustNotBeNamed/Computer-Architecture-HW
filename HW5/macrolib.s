@@ -76,16 +76,21 @@ error_n:
 
 # Вывоз подпрограммы, которая читаем вводимый массив
 .macro input_arr
-      jal     input_arr	
+      jal   input_arr	
 .end_macro
 
 # Вызов подпрограммы, которая ищем сумму, число итераций, четные и нечетные элементы
 .macro solve
-      jal     find_sum
+      jal   find_sum
+.end_macro
+
+# Вызов подпрограммы, которая выводит результат
+.macro output
+      jal   output
 .end_macro
 
 # Завершение программы
 .macro exit
-      li      a7, 10
+      li    a7, 10
       ecall
 .end_macro

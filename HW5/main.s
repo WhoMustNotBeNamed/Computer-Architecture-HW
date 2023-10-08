@@ -16,20 +16,7 @@ main:
         
         solve
         
-        print_str ("sum = ")
-        print_int(t6)   # Вывод суммы
-        newline
-        
-        print_str ("number of iterations = ")
-        print_int(s1)   # Вывод количества просуммированных элементов
-        newline
-        
-        print_str ("number of even = ")
-        print_int(s5)   # Вывод количества четных элементов
-        newline
-        
-        print_str ("number of odd = ")
-        print_int(s6)   # Вывод количества нечетных элементов
+        output          # Вывод результата
         newline
         
         exit            # Завершение программы
