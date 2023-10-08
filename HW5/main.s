@@ -1,6 +1,7 @@
 .include "macrolib.s"
 .include "input_arr.s"
 .include "find_sum.s"
+.include "output.s"
 
 .global main
 
