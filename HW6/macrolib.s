@@ -81,32 +81,32 @@ str:
 .macro read_size(%x)
 	la  	t1 %x
 	push(a0)
-	li		a7, 5
+	li	a7, 5
 	ecall
-	sw		a0 (t1)
-	li		t1 0
+	sw	a0 (t1)
+	li	t1 0
 	pop(a0)
 .end_macro	
 
 # Вызов подпрограммы для копирования строки
 .macro strncpy(%res, %str, %size)
-	la		a1 %res
-	la		a2 %str
-	la		a3 %size
-	jal		strncpy
+	la	a1 %res
+	la	a2 %str
+	la	a3 %size
+	jal	strncpy
 .end_macro
 
 # Проверка размеров size
 .macro check_size(%x, %size)
-	la		t1 %x
-	lw		t2 (t1)
+	la	t1 %x
+	lw	t2 (t1)
 	bltz 	t2 err		# x < 0, ошибка
-	li		t1 30
-	bgt		t2 t1 err	# x > 30, ошибка
-	j		exit
+	li	t1 30
+	bgt	t2 t1 err	# x > 30, ошибка
+	j	exit
 err:
 	print_str("Размер строки должен быть от 0 до 30!\n")
-	j		error		# Читаем размер повторно
+	j	error		# Читаем размер повторно
 exit:
 .end_macro
 
