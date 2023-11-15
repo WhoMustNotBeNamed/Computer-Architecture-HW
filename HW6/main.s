@@ -6,19 +6,19 @@ main:
 .eqv	SIZE 30	    # Буфер
 
 .data	
-	.align 2							                    # Выравнивание ячеек
-	test1_empty_str:	.asciz  ""			                # Тест 1, пустая строка
-	test2_str:		    .asciz  "Hello world and RISC-V!"	# Тест 2, строка
-	test3_user_str:	    .space  SIZE				        # Тест 3, пользовательская строка
-	user_size:		    .word  0				            # Длина строки от пользователя 	
-	TEST1_SIZE_10:	    .word  10				            # Буфер на 10 байт
-	TEST2_SIZE_20:	    .word  20				            # Буфер на 20 байт
-	TEST3_SIZE_30:	    .word  30				            # Буфер на 30 байт
-	result1:		    .space SIZE				            # Ответ1
-	result2:		    .space SIZE				            # Ответ2
-	result3:		    .space SIZE				            # Ответ3
-	result4:		    .space SIZE				            # Ответ4
-	result5:		    .space SIZE				            # Ответ5
+	.align 2							# Выравнивание ячеек
+	test1_empty_str:	.asciz  ""			        # Тест 1, пустая строка
+	test2_str:		.asciz  "Hello world and RISC-V!"	# Тест 2, строка
+	test3_user_str:		.space  SIZE				# Тест 3, пользовательская строка
+	user_size:		.word  0				# Длина строки от пользователя 	
+	TEST1_SIZE_10:	    	.word  10				# Буфер на 10 байт
+	TEST2_SIZE_20:	    	.word  20				# Буфер на 20 байт
+	TEST3_SIZE_30:	    	.word  30				# Буфер на 30 байт
+	result1:		.space SIZE				# Ответ1
+	result2:		.space SIZE				# Ответ2
+	result3:		.space SIZE				# Ответ3
+	result4:		.space SIZE				# Ответ4
+	result5:		.space SIZE				 # Ответ5
 
 .text
 	print_str("Первый тест - пустая строка\n")
