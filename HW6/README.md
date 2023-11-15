@@ -28,10 +28,10 @@ strncpy:
 .text
 	mv	t0 a1		# Адрес строки, в которую копируем 
 	mv	t1 a2		# Адрес исходной строки
-	lw	t2 (a3)	    # Количество символов, которое надо скопировать
+	lw	t2 (a3)	    	# Количество символов, которое надо скопировать
 
 copy_loop:
-	beqz 	t2 end_copy  	# Если длина равно 0, то завершаем программу
+	beqz 	t2 end_copy         # Если длина равно 0, то завершаем программу
 
 	lb 	    t3 0(t1)        # Загружаем символ
 	beqz	t3 end_copy	    # Если мы достигли конца исходной строки
@@ -42,7 +42,7 @@ copy_loop:
 	addi	t2 t2 -1   	    # Уменьшаем длину
 	
 	j	    copy_loop	    # Повторяем цикл
-	j	    exit		    # Выходим
+	j	    exit	    # Выходим
 	
 end_copy:
 	sb	    zero (t0)	    # Записываем нул-символ
@@ -50,9 +50,9 @@ end_copy:
 	bgtz	t2 end_copy	    # Если длина больше 0, повторяем
 	
 exit:	
-	li	    t0 0		# Очищаем регистр
-	li	    t1 0		# Очищаем регистр
-	li	    t2 0		# Очищаем регистр
+	li	    t0 0	# Очищаем регистр
+	li	    t1 0	# Очищаем регистр
+	li	    t2 0	# Очищаем регистр
 	ret             	# Выход
 ```
 
@@ -66,19 +66,19 @@ main:
 .eqv	SIZE 30	    # Буфер
 
 .data	
-	.align 2							                    # Выравнивание ячеек
-	test1_empty_str:	.asciz  ""			                # Тест 1, пустая строка
-	test2_str:		    .asciz  "Hello world and RISC-V!"	# Тест 2, строка
-	test3_user_str:	    .space  SIZE				        # Тест 3, пользовательская строка
-	user_size:		    .word  0				            # Длина строки от пользователя 	
-	TEST1_SIZE_10:	    .word  10				            # Буфер на 10 байт
-	TEST2_SIZE_20:	    .word  20				            # Буфер на 20 байт
-	TEST3_SIZE_30:	    .word  30				            # Буфер на 30 байт
-	result1:		    .space SIZE				            # Ответ1
-	result2:		    .space SIZE				            # Ответ2
-	result3:		    .space SIZE				            # Ответ3
-	result4:		    .space SIZE				            # Ответ4
-	result5:		    .space SIZE				            # Ответ5
+	.align 2							# Выравнивание ячеек
+	test1_empty_str:	.asciz  ""			        # Тест 1, пустая строка
+	test2_str:		.asciz  "Hello world and RISC-V!"	# Тест 2, строка
+	test3_user_str:		.space  SIZE				# Тест 3, пользовательская строка
+	user_size:		.word  0				# Длина строки от пользователя 	
+	TEST1_SIZE_10:	    	.word  10				# Буфер на 10 байт
+	TEST2_SIZE_20:	    	.word  20				# Буфер на 20 байт
+	TEST3_SIZE_30:	    	.word  30				# Буфер на 30 байт
+	result1:		.space SIZE				# Ответ1
+	result2:		.space SIZE				# Ответ2
+	result3:		.space SIZE				# Ответ3
+	result4:		.space SIZE				# Ответ4
+	result5:		.space SIZE				# Ответ5
 
 .text
 	print_str("Первый тест - пустая строка\n")
