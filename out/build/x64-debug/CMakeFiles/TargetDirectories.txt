@@ -1,0 +1,5 @@
+D:/HSE/ComArch/HW8/out/build/x64-debug/CMakeFiles/edit_cache.dir
+D:/HSE/ComArch/HW8/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+D:/HSE/ComArch/HW8/out/build/x64-debug/HW8/CMakeFiles/HW8.dir
+D:/HSE/ComArch/HW8/out/build/x64-debug/HW8/CMakeFiles/edit_cache.dir
+D:/HSE/ComArch/HW8/out/build/x64-debug/HW8/CMakeFiles/rebuild_cache.dir
